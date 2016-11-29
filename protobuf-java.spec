@@ -20,9 +20,13 @@
 
 %endif
 
+# there is no native code so a debuginfo package is
+# bound to be empty: do not produce the empty package
+%global debug_package %{nil}
+
 Name:           %{?scl_prefix}protobuf-java
 Version:        2.5.0
-Release:        %{custom_release}.1%{?dist}
+Release:        %{custom_release}.2%{?dist}
 License:        BSD
 Summary:        Java Protocol Buffers runtime library
 Group:          Development/Languages
@@ -88,5 +92,8 @@ install -d -m 755 %{buildroot}%{_javadir}/%{pkg_name}
 %files javadoc -f java/.mfiles-javadoc
 
 %changelog
+* Tue Jul 26 2016 Jie Kang <jkang@redhat.com> - 2.5.0-2
+- Do not produce empty debuginfo package
+
 * Thu Jun 23 2016 Severin Gehwolf <sgehwolf@redhat.com> - 2.5.0-1
-Initial package.
+- Initial package.
