@@ -26,7 +26,7 @@
 
 Name:           %{?scl_prefix}protobuf-java
 Version:        2.5.0
-Release:        %{custom_release}.2%{?dist}
+Release:        %{custom_release}.3%{?dist}
 License:        BSD
 Summary:        Java Protocol Buffers runtime library
 Group:          Development/Languages
@@ -92,6 +92,9 @@ install -d -m 755 %{buildroot}%{_javadir}/%{pkg_name}
 %files javadoc -f java/.mfiles-javadoc
 
 %changelog
+* Tue Jan 17 2017 Jie Kang <jkang@redhat.com> - 2.5.0-3
+- Rebuild for RHSCL 2.4.
+
 * Tue Jul 26 2016 Jie Kang <jkang@redhat.com> - 2.5.0-2
 - Do not produce empty debuginfo package
 
